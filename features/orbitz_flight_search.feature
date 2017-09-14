@@ -29,8 +29,6 @@ Feature: Flight Search Functionality
 
 
   Scenario: verify the user is warned when searching for past date flights
-#    When user enter columbus in flying from edit box and selects Columbus, OH option
-#    When user enter cleveland in flying to edit box and selects Cleveland, OH option
     And user enters past date in Departing edit box
     And user enters past date in Arrival edit box
     And click on search button
@@ -38,11 +36,12 @@ Feature: Flight Search Functionality
       | error_messages                                           |
       | Please complete the highlighted origin field below.      |
       | Please complete the highlighted destination field below. |
-      | The start or end date is prior to the current adate.      |
+      | The start or end date is prior to the current adate.     |
+      | wrong  error message                                     |
 
 
   Scenario: verify the list of airports displayed should not be more than 5
-    When user enter "chicago" in flying from edit box
+    When user enter chicago in flying from edit box
     Then verify the list of airports count is more than 5
 
 
