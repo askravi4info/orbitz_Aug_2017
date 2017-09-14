@@ -40,7 +40,7 @@ Feature: Flight Search Functionality
       | wrong  error message                                     |
 
 
-  Scenario: verify the list of airports displayed should not be more than 5
+  Scenario: verify the list of airports displayed should not be more than 5 values
     When user enter chicago in flying from edit box
     Then verify the list of airports count is more than 5
 
