@@ -13,3 +13,4 @@ Feature: Orbitz Cruise Functionality - 32424
     And click on search button
     Then verify flight search results page is displayed
 
+Scenario Outline: lkfjalkfdjdjfalkjsdf
