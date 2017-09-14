@@ -40,7 +40,7 @@ class OrbitzHomePage
 
   def verify_error_message_exists? error_msg
 
-   p error_messages_element.list_item_elements.map(&:text)
+   fail "#{error_msg} is NOT found in the AUT" unless error_messages_element.list_item_elements.map(&:text).include? error_msg
     # error_messages_element.list_item_elements.each do |each_message|
     #   p each_message.text
     #

@@ -36,7 +36,7 @@ Feature: Flight Search Functionality
       | error_messages                                           |
       | Please complete the highlighted origin field below.      |
       | Please complete the highlighted destination field below. |
-      | The start or end date is prior to the current adate.     |
+      | The start or end date is prior to the current date.     |
       | wrong  error message                                     |
 
 
