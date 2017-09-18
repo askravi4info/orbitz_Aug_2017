@@ -49,8 +49,11 @@ class OrbitzHomePage
     #     break
     #   end
     # end
+  end
 
 
+  def get_error_messages
+    error_messages_element.list_item_elements.map(&:text)
   end
 
 

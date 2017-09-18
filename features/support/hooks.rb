@@ -1,5 +1,4 @@
-# require 'watir'
-require 'watir-webdriver'
+require 'watir'
 
 Before do |scenario|
   DataMagic.load_for_scenario(scenario)

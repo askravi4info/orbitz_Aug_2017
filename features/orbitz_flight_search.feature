@@ -13,7 +13,6 @@ Feature: Flight Search Functionality
     And click on search button
     Then verify flight search results page is displayed
 
-
   Scenario Outline: verify the user gets the list of airport that matches the city name
     When user enter <dep_city_name> in flying from edit box and selects <dep_airport_name> option
     When user enter <arr_city_name> in flying to edit box and selects <arr_airport_name> option
@@ -36,17 +35,9 @@ Feature: Flight Search Functionality
       | error_messages                                           |
       | Please complete the highlighted origin field below.      |
       | Please complete the highlighted destination field below. |
-      | The start or end date is prior to the current date.     |
+      | The start or end date is prior to the current date.      |
       | wrong  error message                                     |
 
-
-  Scenario: verify the list of airports displayed should not be more than 5 values
-    When user enter chicago in flying from edit box
-    Then verify the list of airports count is more than 5
-
-
-#Declarative
-  Scenario: verify the user gets the list of flights available for the date specified
-    When user searches for a valid airports for the future date
-    And verify the list of airports should match the dates specified
-
+  Scenario: Verify the flight search results are sorted by Price by default
+    And user searches for a valid future flight
+    Then verify the flight search results are sorted by price
