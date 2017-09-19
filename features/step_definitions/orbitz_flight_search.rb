@@ -60,3 +60,19 @@ Then(/^user should see the following message$/) do |table|
     expect(all_error_messages).should include each_value['error_messages']
   end
 end
+
+And(/^user searches for a valid future flight$/) do
+  on(OrbitzHomePage).search_future_flights
+end
+
+Then(/^verify the flight search results are sorted by price$/) do
+  actual_prices = on(OrbitzFlightSearchResultsPage).get_price_details
+  expected_prices = actual_prices.sort.sort
+
+  fail "Actual Prices - #{actual_prices} is NOT in Ascending order" unless actual_prices == expected_prices
+
+end
+
+Then(/^verify the yml functionality works$/) do
+  on(OrbitzHomePage).load_yml_data
+end

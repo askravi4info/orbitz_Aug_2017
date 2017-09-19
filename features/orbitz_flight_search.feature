@@ -1,10 +1,12 @@
-Feature: Flight Search Functionality
+@orbitz_flight
 
+Feature: Flight Search Functionality
   Background:
     Given user is on Orbitz home page
     And user selects round trip button under flights tab
 
     #Imperative
+  @flight_search
   Scenario: verify the user gets the list of flights available for the dates specified
     When user enter columbus in flying from edit box and selects Columbus, OH option
     When user enter cleveland in flying to edit box and selects Cleveland, OH option
@@ -13,6 +15,7 @@ Feature: Flight Search Functionality
     And click on search button
     Then verify flight search results page is displayed
 
+  @flight_search
   Scenario Outline: verify the user gets the list of airport that matches the city name
     When user enter <dep_city_name> in flying from edit box and selects <dep_airport_name> option
     When user enter <arr_city_name> in flying to edit box and selects <arr_airport_name> option
@@ -26,7 +29,7 @@ Feature: Flight Search Functionality
       | columbus      | cleveland     | Columbus, OH     | Cleveland, OH    |
       | chicago       | indianapolis  | Chicago, IL      | Indianapolis, IN |
 
-
+@qa
   Scenario: verify the user is warned when searching for past date flights
     And user enters past date in Departing edit box
     And user enters past date in Arrival edit box
@@ -38,6 +41,15 @@ Feature: Flight Search Functionality
       | The start or end date is prior to the current date.      |
       | wrong  error message                                     |
 
+  @flight_results_0485
   Scenario: Verify the flight search results are sorted by Price by default
     And user searches for a valid future flight
     Then verify the flight search results are sorted by price
+
+  @smoke
+  Scenario: testing the yml functionality
+    Then verify the yml functionality works
+
+  @smoke @manual
+  Scenario: still working on it
+    Then steps are pending
