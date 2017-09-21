@@ -1,6 +1,7 @@
 @orbitz_flight
 
 Feature: Flight Search Functionality
+
   Background:
     Given user is on Orbitz home page
     And user selects round trip button under flights tab
@@ -29,7 +30,7 @@ Feature: Flight Search Functionality
       | columbus      | cleveland     | Columbus, OH     | Cleveland, OH    |
       | chicago       | indianapolis  | Chicago, IL      | Indianapolis, IN |
 
-@qa
+  @Done
   Scenario: verify the user is warned when searching for past date flights
     And user enters past date in Departing edit box
     And user enters past date in Arrival edit box
@@ -46,10 +47,10 @@ Feature: Flight Search Functionality
     And user searches for a valid future flight
     Then verify the flight search results are sorted by price
 
-  @smoke
+  @Done
   Scenario: testing the yml functionality
     Then verify the yml functionality works
 
-  @smoke @manual
+  @Done
   Scenario: still working on it
     Then steps are pending

@@ -1,1 +1,4 @@
-default: --no-source --color --format pretty
+default: --no-source --color --format pretty --format html --out report.html
+smoke: --no-source --color --format pretty --format html --out report.html --tags @smoke lfjajdflldjalj
+regression_qa_chrome: --no-source --color --format pretty --format html --out report.html --tags @regression --tags @qa Env['browser']='chrome' Env['environment'] = 'qa'
+regression_qa_ie: --no-source --color --format pretty --format html --out report.html --tags @regression --tags @qa Env['browser']='ie' Env['environment'] = 'patch'
